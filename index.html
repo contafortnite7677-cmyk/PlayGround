@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="theme-color" content="#101513">
+  <title>Maré de Cinza — Ecos do Infinito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Maré de Cinza, início"><span class="brand-mark">◈</span><span>MARÉ <i>DE</i> CINZA</span></a>
+      <div class="top-meta"><span class="chapter-label">ARQUIVO 01&nbsp; / &nbsp;O MUNDO QUE ESQUECE</span><button class="icon-btn" id="soundBtn" title="Alternar som">♫</button><button class="icon-btn" id="helpBtn" title="Controles">?</button></div>
+    </header>
+    <section class="game-layout">
+      <div class="play-column">
+        <div class="game-frame">
+          <canvas id="game" width="960" height="600" aria-label="Arena de jogo Maré de Cinza"></canvas>
+          <div class="canvas-top"><div class="region-pill"><span class="live-dot"></span><span id="regionName">JARDIM SUBMERSO</span></div><div class="run-seed">SEMENTE <b id="seedLabel">—</b></div></div>
+          <div class="boss-bar hidden" id="bossBar"><div class="boss-title"><span id="bossName">O SEM-NOME</span><span id="bossPhase">FASE I</span></div><div class="boss-track"><i id="bossFill"></i></div></div>
+          <div class="center-overlay" id="overlay">
+            <div class="overlay-content" id="overlayContent"></div>
+          </div>
+          <div class="toast" id="toast"></div>
+          <div class="touch-controls" id="touchControls"><div class="touch-stick" id="stick"><span></span></div><button id="touchDash" class="touch-action">↗<small>ESQUIVA</small></button><button id="touchSkill" class="touch-action skill-touch">✦<small>MARÉ</small></button></div>
+        </div>
+        <div class="below-bar"><div class="objective"><span class="objective-icon">✳</span><span id="objective">ENCONTRE O CAMINHO ATRAVÉS DA NÉVOA</span></div><div class="controls-hint"><kbd>WASD</kbd> mover <kbd>ESPAÇO</kbd> esquiva <kbd>Q</kbd> habilidade <kbd>CLIQUE</kbd> atacar</div></div>
+      </div>
+      <aside class="sidebar">
+        <div class="run-heading"><div><div class="eyebrow">SUA EXPEDIÇÃO</div><div class="run-title" id="runTitle">A PRIMEIRA MARÉ</div></div><button id="pauseBtn" class="pause-btn" title="Pausar">Ⅱ</button></div>
+        <div class="player-card"><div class="avatar" id="avatar">✷</div><div class="player-info"><strong id="heroName">A Errante</strong><span id="heroSubtitle">Cartógrafa do impossível</span></div><button class="change-hero" id="heroBtn" title="Escolher personagem">⇄</button></div>
+        <div class="vitals"><div class="vital-label"><span>VITALIDADE</span><b id="hpText">100 / 100</b></div><div class="meter hp-meter"><i id="hpFill"></i></div><div class="vital-label second"><span>ÉTER</span><b id="etherText">0</b></div><div class="meter ether-meter"><i id="etherFill"></i></div></div>
+        <div class="weapon-row"><div class="weapon-icon" id="weaponIcon">⌁</div><div><div class="eyebrow">ARMA ATIVA</div><strong id="weaponName">Agulha de Sal</strong><span class="weapon-type" id="weaponType">DISPARO RÁPIDO</span></div><button id="weaponBtn" class="small-switch" title="Trocar arma">↻</button></div>
+        <div class="stats-grid"><div><span>REGIÃO</span><b id="floorText">01 <i>/ 06</i></b></div><div><span>ABATES</span><b id="killText">00</b></div><div><span>RELÍQUIAS</span><b id="relicText">00 <i>/ 06</i></b></div><div><span>COMBO</span><b id="comboText">×1.0</b></div></div>
+        <div class="section-title"><span>RESSONÂNCIAS</span><span class="section-count" id="synergyCount">0 ATIVAS</span></div>
+        <div class="synergy-list" id="synergyList"><div class="empty-synergy">As relíquias que você carrega<br>mudarão o curso da maré.</div></div>
+        <div class="relic-section"><div class="section-title"><span>FRAGMENTOS</span><span class="section-count" id="relicCount">0 / 6</span></div><div class="relic-slots" id="relicSlots"></div></div>
+        <div class="meta-footer"><span>✧ <b id="shardCount">0</b> fragmentos de memória</span><button id="metaBtn">SANTUÁRIO ↗</button></div>
+      </aside>
+    </section>
+    <footer class="footer"><span>© MARÉ DE CINZA <i>—</i> ECOS DO INFINITO</span><span>UM MUNDO, MIL FORMAS DE DESAPARECER <b>✳</b></span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
